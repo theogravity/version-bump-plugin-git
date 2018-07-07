@@ -18,15 +18,16 @@ import {
  */
 export default class CliBumpStrategy extends BaseVersionStrategy {
   static description = 'Performs a version bump based on command line options.'
+  static strategyShortName = 'cli'
 
   async init () {
     this.strategyOptions = await parseOptions(this.options.strategyOptions) || {}
     this.bump = this.strategyOptions.bump
   }
 
-  initCliOptions (program) {
+  static initCliOptions (program) {
     program
-      .command(`${this.getStrategyName()} <options>`)
+      .command(`${CliBumpStrategy.strategyShortName} <options>`)
       .description(CliBumpStrategy.description)
       .option('-b, --bump <bump_type>', `Bump the version based on <bump_type>. Values can be:
                                             * major

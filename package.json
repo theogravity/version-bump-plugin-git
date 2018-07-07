@@ -1,6 +1,6 @@
 {
   "name": "@theo.gravity/version-bump-plugin-cli",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "cli plugin for the @theo.gravity/version-bump tool",
   "main": "lib/index.js",
   "scripts": {
