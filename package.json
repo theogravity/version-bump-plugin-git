@@ -1,6 +1,6 @@
 {
   "name": "@theo.gravity/version-bump-plugin-cli",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "cli plugin for the @theo.gravity/version-bump tool",
   "main": "lib/index.js",
   "scripts": {
@@ -27,6 +27,7 @@
   "devDependencies": {
     "@theo.gravity/changelog-version": "^2.1.1",
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",

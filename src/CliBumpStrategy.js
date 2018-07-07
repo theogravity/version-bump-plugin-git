@@ -17,9 +17,7 @@ import {
  * --bump build:<colon-separated-tags> eg (build:qa)
  */
 export default class CliBumpStrategy extends BaseVersionStrategy {
-  getStrategyName () {
-    return 'cli'
-  }
+  static description = 'Performs a version bump based on command line options.'
 
   async init () {
     this.strategyOptions = await parseOptions(this.options.strategyOptions) || {}
@@ -29,7 +27,7 @@ export default class CliBumpStrategy extends BaseVersionStrategy {
   initCliOptions (program) {
     program
       .command(`${this.getStrategyName()} <options>`)
-      .description('Simple bump strategy')
+      .description(CliBumpStrategy.description)
       .option('-b, --bump <bump_type>', `Bump the version based on <bump_type>. Values can be:
                                             * major
                                             * minor

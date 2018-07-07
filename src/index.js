@@ -1,7 +1,9 @@
 import CliBumpStrategy from './CliBumpStrategy'
 
 export function getStrategies () {
-  return {
-    'cli': CliBumpStrategy
-  }
+  return [{
+    name: 'cli',
+    fn: CliBumpStrategy,
+    description: CliBumpStrategy.description
+  }]
 }
