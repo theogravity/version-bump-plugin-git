@@ -581,9 +581,9 @@
     dateformat "^3.0.3"
     debug "^3.1.0"
 
-"@theo.gravity/version-bump@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@theo.gravity/version-bump/-/version-bump-1.0.3.tgz#b09a128cb7426007207ea82def7d31b5bf9b1f72"
+"@theo.gravity/version-bump@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@theo.gravity/version-bump/-/version-bump-1.0.4.tgz#33ad52685ce57bd6583f449a4eebf4f638b0f670"
   dependencies:
     debug "^3.1.0"
     load-deps "^1.0.5"
