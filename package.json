@@ -11,7 +11,8 @@
     "test": "jest",
     "build": "babel src -d lib",
     "prepublishOnly": "jest && babel src -d lib",
-    "prepare-publish": "version-bump && npm run changelog:release"
+    "prepare-publish": "version-bump && npm run changelog:release",
+    "lint-staged": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,28 @@
     "@theo.gravity/version-bump": "^1.0.3",
     "git-last-commit": "^0.3.0"
   },
+  "keywords": [
+    "version",
+    "versioning",
+    "cli",
+    "bump",
+    "semver",
+    "package",
+    "revision",
+    "prerelease",
+    "commit",
+    "git",
+    "release",
+    "increment",
+    "automation",
+    "circle-ci",
+    "travis-ci",
+    "automatic",
+    "package",
+    "package.json",
+    "file",
+    "version-bump-plugin"
+  ],
   "devDependencies": {
     "@babel/cli": "7.0.0",
     "@babel/core": "^7.1.0",
@@ -41,12 +64,24 @@
     "lint-staged": "^7.2.0",
     "prettier-standard": "^8.0.1",
     "regenerator-runtime": "^0.12.1",
-    "standard": "^11.0.1"
+    "standard": "^12.0.1"
   },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.js"
     ],
     "testEnvironment": "node"
+  },
+  "pre-commit": [
+    "lint-staged",
+    "changelog:verify",
+    "test",
+    "build"
+  ],
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier-standard",
+      "git add"
+    ]
   }
 }

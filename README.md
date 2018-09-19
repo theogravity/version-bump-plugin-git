@@ -1,5 +1,7 @@
 # version-bump-plugin-git
 
+[![CircleCI](https://circleci.com/gh/theogravity/version-bump-plugin-git.svg?style=svg)](https://circleci.com/gh/theogravity/version-bump-plugin-git)
+
 A version strategy for [version-bump](https://github.com/theogravity/version-bump).
 
 Uses the last git commit subject to determine the bump level. Will bump based on the following text:
