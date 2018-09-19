@@ -4,6 +4,8 @@ if [[ "${CIRCLE_BRANCH}" == "master" ]]
 then
   echo "Raising package version and updating CHANGELOG.md"
 
+  sudo npm i @theo.gravity/version-bump -g
+
   git config --global push.default simple
   git config --global user.email "theo@suteki.nu"
   git config --global user.name "CircleCI Publisher"
@@ -12,7 +14,7 @@ then
   git stash
 
   # Make sure to get the latest master (if there were any prior commits)
-  git pull origin
+  git pull origin master
 
   # Re-apply the stash
   git stash apply
@@ -31,14 +33,17 @@ then
   # The CI does not end up recursively building it
 
   # This gets the last commit log message
-  LAST_COMMIT_MSG=`git log -1 --pretty=%B|tr -d '\r'`
+  PKG_VERSION=`version-bump show-version`
 
   # Appending [skip ci] to the log message
   # Note: --amend does not trigger the pre-commit hooks
-  git commit --amend -m "${LAST_COMMIT_MSG} [skip ci]"
+  git commit --amend -m "${PKG_VERSION} [skip ci]"
+
+  git tag v${PKG_VERSION}
 
   # Push the commits back to master and assign a versioned release tag
-  git push --force && git push origin "v${LAST_COMMIT_MSG}" --force
+  # Had to add --force because the pull was getting rejected each time
+  git push --force && git push origin "v${PKG_VERSION}" --force
 
   # Publish the package to npm
   echo "Publishing package"
