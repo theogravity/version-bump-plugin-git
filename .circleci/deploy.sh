@@ -38,7 +38,7 @@ then
   git commit --amend -m "${LAST_COMMIT_MSG} [skip ci]"
 
   # Push the commits back to master and assign a versioned release tag
-  git push && git push origin --force "v${LAST_COMMIT_MSG}"
+  git push --force && git push origin "v${LAST_COMMIT_MSG}" --force
 
   # Publish the package to npm
   echo "Publishing package"
