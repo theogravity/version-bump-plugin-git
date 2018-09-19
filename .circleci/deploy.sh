@@ -25,6 +25,7 @@ then
 
   # Changelog is now stamped with the version / time info - add to git
   git add CHANGELOG.md
+  git add package.json
 
   # Amend the version commit with a ci skip so when we push the commits from the CI
   # The CI does not end up recursively building it
@@ -37,7 +38,7 @@ then
   git commit --amend -m "${LAST_COMMIT_MSG} [skip ci]"
 
   # Push the commits back to master and assign a versioned release tag
-  git push && git push origin "v${LAST_COMMIT_MSG}"
+  git push && git push origin --force "v${LAST_COMMIT_MSG}"
 
   # Publish the package to npm
   echo "Publishing package"
