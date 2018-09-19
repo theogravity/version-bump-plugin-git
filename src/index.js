@@ -1,7 +1,7 @@
-import CliBumpStrategy from './CliBumpStrategy'
+import GitCommitMessageStrategy from './GitCommitMessageStrategy'
 
 export function getStrategies () {
   return [{
-    fn: CliBumpStrategy
+    fn: GitCommitMessageStrategy
   }]
 }
