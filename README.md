@@ -1,6 +1,6 @@
 # version-bump-plugin-git
 
-A versioning strategy for [version-bump](https://github.com/theogravity/version-bump).
+A version strategy for [version-bump](https://github.com/theogravity/version-bump).
 
 Uses the last git commit subject to determine the bump level. Will bump based on the following text:
 
@@ -24,5 +24,15 @@ install the strategy with:
 
 ## Usage
 
+From command line:
+
 `$ version-bump git-commit-msg`
 
+As a [config file](https://github.com/theogravity/version-bump#custom-configuration-file):
+
+```js
+// save as .version-bump.js in the root of your project
+module.exports = {
+  strategy: 'git-commit-msg'
+}
+```

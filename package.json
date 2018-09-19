@@ -1,7 +1,7 @@
 {
-  "name": "@theo.gravity/version-bump-plugin-cli",
-  "version": "0.0.7",
-  "description": "cli plugin for the @theo.gravity/version-bump tool",
+  "name": "version-bump-plugin-git",
+  "version": "1.0.0",
+  "description": "Version strategy for bumping version based on the last git commit message",
   "main": "lib/index.js",
   "scripts": {
     "changelog:help": "changelog-version",
@@ -10,20 +10,21 @@
     "changelog:release": "changelog-version release",
     "test": "jest",
     "build": "babel src -d lib",
-    "prepublishOnly": "jest && babel src -d lib"
+    "prepublishOnly": "jest && babel src -d lib",
+    "prepare-publish": "version-bump && npm run changelog:release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/theogravity/version-bump-plugin-cli.git"
+    "url": "git+https://github.com/theogravity/version-bump-plugin-git.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/theogravity/version-bump-plugin-cli/issues"
+    "url": "https://github.com/theogravity/version-bump-plugin-git/issues"
   },
-  "homepage": "https://github.com/theogravity/version-bump-plugin-cli#readme",
+  "homepage": "https://github.com/theogravity/version-bump-plugin-git#readme",
   "dependencies": {
-    "@theo.gravity/version-bump": "^0.0.6",
+    "@theo.gravity/version-bump": "^1.0.3",
     "git-last-commit": "^0.3.0"
   },
   "devDependencies": {
