@@ -11,7 +11,7 @@
     "test": "jest",
     "build": "babel src -d lib",
     "prepublishOnly": "jest && babel src -d lib",
-    "prepare-publish": "changelog:verify && version-bump && npm run changelog:release",
+    "prepare-publish": "npm run changelog:verify && version-bump && npm run changelog:release",
     "lint-staged": "lint-staged"
   },
   "repository": {
