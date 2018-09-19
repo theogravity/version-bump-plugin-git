@@ -1,6 +1,6 @@
 # version-bump-plugin-git
 
-[![CircleCI](https://circleci.com/gh/theogravity/version-bump-plugin-git.svg?style=svg)](https://circleci.com/gh/theogravity/version-bump-plugin-git)
+[![npm version](https://badge.fury.io/js/version-bump-plugin-git.svg)](https://badge.fury.io/js/version-bump-plugin-git) [![CircleCI](https://circleci.com/gh/theogravity/version-bump-plugin-git.svg?style=svg)](https://circleci.com/gh/theogravity/version-bump-plugin-git)
 
 A version strategy for [version-bump](https://github.com/theogravity/version-bump).
 
