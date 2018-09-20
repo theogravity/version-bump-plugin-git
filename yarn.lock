@@ -581,9 +581,15 @@
     dateformat "^3.0.3"
     debug "^3.1.0"
 
+<<<<<<< HEAD
 "@theo.gravity/version-bump@^1.0.19":
   version "1.0.19"
   resolved "https://registry.yarnpkg.com/@theo.gravity/version-bump/-/version-bump-1.0.19.tgz#eb977ebcf82be9b7834b8cedcb63cb4a7e5c7108"
+=======
+"@theo.gravity/version-bump@^1.0.10":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@theo.gravity/version-bump/-/version-bump-1.0.10.tgz#2b61caff09f795a8b74f4639f300a5e2e2e9ba4e"
+>>>>>>> d2a5f3fb411f9f5ead7a132855658a5d8af5ecbc
   dependencies:
     debug "^3.1.0"
     find-plugins "^1.1.7"
