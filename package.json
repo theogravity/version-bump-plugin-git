@@ -25,8 +25,8 @@
   },
   "homepage": "https://github.com/theogravity/version-bump-plugin-git#readme",
   "dependencies": {
-    "@theo.gravity/version-bump": "^1.0.22",
-    "git-last-commit": "^0.3.0"
+    "@theo.gravity/version-bump": "^1.2.6",
+    "git-last-commit": "^1.0.0"
   },
   "keywords": [
     "version",
@@ -51,20 +51,20 @@
     "version-bump-plugin"
   ],
   "devDependencies": {
-    "@babel/cli": "7.0.0",
-    "@babel/core": "^7.1.0",
-    "@babel/plugin-proposal-class-properties": "7.0.0",
-    "@babel/plugin-proposal-object-rest-spread": "7.0.0",
-    "@babel/preset-env": "7.0.0",
-    "@babel/register": "7.0.0",
-    "@theo.gravity/changelog-version": "^2.1.1",
+    "@babel/cli": "7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "7.9.0",
+    "@babel/preset-env": "7.9.0",
+    "@babel/register": "7.9.0",
+    "@theo.gravity/changelog-version": "^2.1.10",
     "babel-core": "^7.0.0-0",
-    "babel-jest": "^23.6.0",
-    "jest-cli": "^23.6.0",
-    "lint-staged": "^7.2.0",
-    "prettier-standard": "^8.0.1",
-    "regenerator-runtime": "^0.12.1",
-    "standard": "^12.0.1"
+    "babel-jest": "^25.2.3",
+    "jest-cli": "^25.2.3",
+    "lint-staged": "^10.0.9",
+    "prettier-standard": "^16.2.1",
+    "regenerator-runtime": "^0.13.5",
+    "standard": "^14.3.3"
   },
   "jest": {
     "collectCoverageFrom": [
