@@ -1,6 +1,6 @@
 {
   "name": "version-bump-plugin-git",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Version strategy for bumping version based on the last git commit message",
   "main": "build/index.js",
   "types": "build/index.d.ts",

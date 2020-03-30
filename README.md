@@ -18,6 +18,10 @@ Uses the last git commit subject to determine the bump level. Will bump based on
 Default is the lowest version possible.
 
 <!-- TOC -->
+- [Install](#install)
+- [Usage](#usage)
+
+<!-- TOC END -->
 
 ## Install
 
