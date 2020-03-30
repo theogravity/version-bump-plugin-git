@@ -17,6 +17,8 @@ Uses the last git commit subject to determine the bump level. Will bump based on
 
 Default is the lowest version possible.
 
+<!-- TOC -->
+
 ## Install
 
 Make sure you have [version-bump](https://github.com/theogravity/version-bump) installed, then
@@ -35,6 +37,6 @@ As a [config file](https://github.com/theogravity/version-bump#custom-configurat
 ```js
 // save as .version-bump.js in the root of your project
 module.exports = {
-  strategy: 'git-commit-msg'
+  strategy: 'git-commit-subj'
 }
 ```

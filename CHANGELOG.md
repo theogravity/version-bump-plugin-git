@@ -1,6 +1,11 @@
 # UNRELEASED
 
-Package updates
+Update CI, use typescript.
+
+Breaking:
+
+- Changed the strategy name from `git-commit-msg` -> `git-commit-subj` to reflect it pulls 
+from the subject line
 
 # 1.0.5 - Thu Sep 20 2018 08:11:21
 

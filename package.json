@@ -2,31 +2,31 @@
   "name": "version-bump-plugin-git",
   "version": "1.0.5",
   "description": "Version strategy for bumping version based on the last git commit message",
-  "main": "lib/index.js",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
+    "build": "npm run build:clean && npm run compile",
+    "build:docs": "typedoc --options typedoc.js --plugin typedoc-plugin-markdown src/ --out docs",
+    "build:clean": "rm -rf build/*",
+    "compile": "tsc",
+    "debug": "ts-node-dev --inspect -- src/index.ts",
+    "debug:break": "ts-node-dev --inspect-brk -- src/index.ts",
+    "test": "jest",
+    "test:ci": "jest --ci --coverage",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest",
+    "test:watch": "jest --watch",
+    "test:coverage:watch": "jest --coverage --watch",
+    "toc": "toc-md README.md README.md",
+    "add-readme": "git add README.md",
+    "lint-staged": "lint-staged",
+    "prepare-publish": "npm run changelog:verify && version-bump && npm run changelog:release",
+    "version-bump": "version-bump",
     "changelog:help": "changelog-version",
     "changelog:verify": "changelog-version verify",
     "changelog:prepare": "changelog-version prepare",
     "changelog:release": "changelog-version release",
-    "test": "jest",
-    "build": "babel src -d lib",
-    "prepublishOnly": "jest && babel src -d lib",
-    "prepare-publish": "npm run changelog:verify && version-bump && npm run changelog:release",
-    "lint-staged": "lint-staged"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/theogravity/version-bump-plugin-git.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/theogravity/version-bump-plugin-git/issues"
-  },
-  "homepage": "https://github.com/theogravity/version-bump-plugin-git#readme",
-  "dependencies": {
-    "@theo.gravity/version-bump": "^1.2.6",
-    "git-last-commit": "^1.0.0"
+    "lint": "prettier-standard src/**/*.ts && standardx src/**/*.ts",
+    "ts-node-dev": "ts-node-dev"
   },
   "keywords": [
     "version",
@@ -50,37 +50,73 @@
     "file",
     "version-bump-plugin"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theogravity/version-bump-plugin-git.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theogravity/version-bump-plugin-git/issues"
+  },
+  "homepage": "https://github.com/theogravity/version-bump-plugin-git#readme",
+  "dependencies": {
+    "@theo.gravity/version-bump": "^2.0.5",
+    "git-last-commit": "^1.0.0"
+  },
   "devDependencies": {
-    "@babel/cli": "7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-proposal-class-properties": "7.8.3",
-    "@babel/plugin-proposal-object-rest-spread": "7.9.0",
-    "@babel/preset-env": "7.9.0",
-    "@babel/register": "7.9.0",
     "@theo.gravity/changelog-version": "^2.1.10",
-    "babel-core": "^7.0.0-0",
-    "babel-jest": "^25.2.3",
-    "jest-cli": "^25.2.3",
-    "lint-staged": "^10.0.9",
-    "prettier-standard": "^16.2.1",
-    "regenerator-runtime": "^0.13.5",
-    "standard": "^14.3.3"
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.5",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "eslint": "^6.8.0",
+    "jest": "25.2.4",
+    "jest-cli": "25.2.4",
+    "jest-junit-reporter": "1.1.0",
+    "lint-staged": "10.0.10",
+    "pre-commit": "1.2.2",
+    "prettier-standard": "16.2.1",
+    "standardx": "^5.0.0",
+    "toc-md-alt": "^0.3.2",
+    "ts-jest": "^25.3.0",
+    "ts-node": "^8.8.1",
+    "ts-node-dev": "1.0.0-pre.44",
+    "typedoc": "^0.17.3",
+    "typedoc-plugin-markdown": "^2.2.17",
+    "typescript": "^3.8.3"
   },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.js"
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "modules": true
+      }
+    },
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint/eslint-plugin"
     ],
-    "testEnvironment": "node"
+    "rules": {
+      "@typescript-eslint/no-unused-vars": [
+        2,
+        {
+          "args": "none"
+        }
+      ]
+    }
   },
-  "pre-commit": [
-    "lint-staged",
-    "test",
-    "build"
-  ],
   "lint-staged": {
-    "src/**/*.js": [
+    "src/**/*.ts": [
       "prettier-standard",
       "git add"
     ]
-  }
+  },
+  "pre-commit": [
+    "toc",
+    "lint-staged",
+    "test:ci",
+    "build"
+  ]
 }
